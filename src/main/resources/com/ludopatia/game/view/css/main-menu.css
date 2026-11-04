@@ -1,0 +1,177 @@
+/*
+ * MAIN-MENU.CSS — Ludopatia
+ *
+ * Estilos exclusivos do menu principal.
+ * Caminhos de imagens relativos à localização deste CSS:
+ * view/css/main-menu.css
+ */
+
+/* Importa a base compartilhada */
+@import "global.css";
+
+/* =========================================================
+   FUNDO E CAMADA DE SOMBREAMENTO
+   ========================================================= */
+
+.main-menu-background {
+    -fx-background-image: url("../../assets/images/main-menu/background-main-menu.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+    -fx-background-size: cover;
+    -fx-background-color: #080F14;
+}
+
+.overlay {
+    -fx-background-color: rgba(3, 8, 12, 0.34);
+}
+
+/* =========================================================
+   COMPOSIÇÃO CENTRAL
+   ========================================================= */
+
+/*
+ * A VBox diretamente dentro do StackPane é a composição central.
+ * A VBox interna (login-card) é estilizada separadamente abaixo.
+ */
+.main-menu-background > VBox {
+    -fx-alignment: center;
+    -fx-spacing: 5px;
+    -fx-pref-width: 704px;
+    -fx-max-width: 704px;
+    -fx-padding: 10px 20px 10px 20px;
+}
+
+/* Emblema do jogo */
+.main-menu-background > VBox > ImageView {
+    -fx-fit-width: 200px;
+    -fx-fit-height: 150px;
+    -fx-preserve-ratio: true;
+}
+
+.game-title {
+    -fx-font-size: 110px;
+    -fx-font-weight: 900;
+
+    -fx-text-fill: linear-gradient(
+        to bottom,
+        #F1F0E9 0%,
+        #EFF2ED 36%,
+        #D7DDDA 58%,
+        #AAB6B2 83%,
+        #727E7C 100%
+    );
+
+    -fx-effect: dropshadow(
+        gaussian,
+        rgba(0, 0, 0, 0.75),
+        9,
+        0,
+        0,
+        5
+    );
+
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+
+    -fx-padding: 0px 0px 0px 0px;
+}
+
+.game-subtitle {
+    -fx-font-size: 25px;
+    -fx-font-weight: 900;
+
+    -fx-text-fill: #9B8D60;
+
+    -fx-letter-spacing: 5px;
+
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+
+    -fx-padding: 0px 0px 20px 0px;
+}
+
+.login-card {
+    -fx-alignment: center;
+    -fx-spacing: 12px;
+    -fx-padding: 22px 28px 22px 28px;
+
+    -fx-pref-width: 390px;
+    -fx-min-width: 390px;
+    -fx-max-width: 390px;
+
+    -fx-background-color: rgba(7, 19, 28, 0.78);
+    -fx-background-radius: 16px;
+
+    -fx-border-color: rgba(220, 229, 226, 0.20);
+    -fx-border-width: 1px;
+    -fx-border-radius: 16px;
+
+    -fx-effect: dropshadow(
+        gaussian,
+        rgba(0, 0, 0, 0.48),
+        28,
+        0.15,
+        0,
+        10
+    );
+}
+
+/* Cada linha/opção */
+
+.option-box {
+    -fx-alignment: center-left;
+    -fx-spacing: 18px;
+
+    -fx-pref-width: 330px;
+    -fx-min-width: 330px;
+    -fx-max-width: 330px;
+
+    -fx-pref-height: 58px;
+    -fx-min-height: 58px;
+    -fx-max-height: 58px;
+
+    -fx-padding: 0 18px 0 18px;
+
+    -fx-background-color: rgba(236, 241, 237, 0.045);
+    -fx-background-radius: 9px;
+
+    -fx-border-color: rgba(236, 241, 237, 0.13);
+    -fx-border-width: 1px;
+    -fx-border-radius: 9px;
+}
+
+/* Ícones das três opções */
+.option-icon {
+    -fx-fit-width: 32px;
+    -fx-fit-height: 32px;
+    -fx-preserve-ratio: true;
+}
+
+/* Texto das opções */
+.option-text {
+    -fx-font-family: "Inter";
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #E8ECE8;
+}
+
+/* Destaque visual comum ao passar o mouse sobre uma opção.
+   O HBox não é clicável por si só; o efeito é apenas visual. */
+.login-card > HBox:hover {
+    -fx-background-color: rgba(236, 241, 237, 0.10);
+    -fx-border-color: rgba(190, 177, 125, 0.55);
+}
+
+/* =========================================================
+   NOTA SOBRE INTERAÇÃO
+   ========================================================= */
+
+/*
+ * Neste FXML, as opções são HBox + ImageView + Label.
+ * Não são Buttons. Portanto, estados JavaFX como :pressed e
+ * :focused não se aplicam automaticamente a essas linhas.
+ *
+ * Quando a navegação for implementada, considere tornar cada
+ * HBox clicável pelo Controller ou substituir por Button
+ * customizado, mantendo o ImageView e o Label dentro dele.
+ */

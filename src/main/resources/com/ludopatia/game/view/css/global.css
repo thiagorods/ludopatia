@@ -1,0 +1,21 @@
+/*
+ * GLOBAL.CSS — Ludopatia
+ *
+ * Regras compartilhadas entre telas.
+ * Evite colocar aqui estilos ligados exclusivamente ao menu principal.
+ */
+
+.root {
+    -fx-font-family: "Arial", sans-serif;
+    -fx-background-color: #080F14;
+}
+
+/* Aparência-base de textos */
+.label {
+    -fx-text-fill: #F0F2EF;
+}
+
+/* Aparência-base de ícones */
+.image-view {
+    -fx-smooth: true;
+}
