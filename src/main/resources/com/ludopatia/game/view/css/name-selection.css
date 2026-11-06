@@ -1,0 +1,238 @@
+
+/* =========================================
+   PAINEL DE CRIAÇÃO DE PARTIDA
+   ========================================= */
+
+.creation-card {
+    -fx-pref-width: 522px;
+    -fx-pref-height: 357px;
+    -fx-max-width: 522px;
+
+    -fx-padding: 26px 32px 24px 32px;
+    -fx-spacing: 0px;
+
+    -fx-background-color: rgba(5, 11, 17, 0.94);
+    -fx-background-radius: 24px;
+
+    -fx-border-color: rgba(160, 170, 180, 0.30);
+    -fx-border-width: 1px;
+    -fx-border-radius: 24px;
+
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.55), 24, 0.2, 0, 8);
+}
+
+/* =========================================
+   CABEÇALHO
+   ========================================= */
+
+.card-header {
+    -fx-alignment: CENTER_LEFT;
+    -fx-spacing: 9px;
+    -fx-padding: 0 0 18px 0;
+}
+
+.header-icon {
+    -fx-pref-width: 38px;
+    -fx-pref-height: 38px;
+    -fx-min-width: 38px;
+    -fx-min-height: 38px;
+
+    -fx-background-color: #B80D17;
+    -fx-background-radius: 50%;
+    -fx-alignment: CENTER;
+
+    /*-fx-background-image: url("../../assets/images/name-selection/icon-naipe-espadas.png");*/
+}
+
+.header-title {
+    -fx-text-fill: #F0F1F4;
+    -fx-font-family: "Arial";
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+/* =========================================
+   SEPARADOR VERMELHO
+   ========================================= */
+
+.card-divider {
+    -fx-pref-height: 6px;
+    -fx-min-height: 6px;
+    -fx-max-height: 6px;
+
+    -fx-background-color: #B80D17;
+    -fx-background-insets: 0;
+
+    -fx-padding: 0;
+}
+
+/* =========================================
+   TEXTOS INFORMATIVOS
+   ========================================= */
+
+.card-description {
+    -fx-text-fill: #AEB2BC;
+    -fx-font-family: "Arial";
+    -fx-font-size: 12px;
+
+    -fx-padding: 16px 0 17px 0;
+}
+
+.field-label {
+    -fx-text-fill: #AEB2BC;
+    -fx-font-family: "Arial";
+    -fx-font-size: 9px;
+    -fx-font-weight: bold;
+
+    -fx-padding: 0 0 12px 0;
+}
+
+.field-hint {
+    -fx-text-fill: #626B7D;
+    -fx-font-family: "Arial";
+    -fx-font-size: 10px;
+
+    -fx-padding: 15px 0 17px 0;
+}
+
+/* =========================================
+   CAMPO DE TEXTO
+   ========================================= */
+
+.bet-name-field {
+    -fx-pref-height: 56px;
+    -fx-min-height: 56px;
+    -fx-max-height: 56px;
+
+    -fx-background-color: #0C111B;
+    -fx-background-radius: 0;
+
+    -fx-border-color: #B80D17;
+    -fx-border-width: 1px;
+
+    -fx-text-fill: #E5E7EB;
+    -fx-prompt-text-fill: #697184;
+
+    -fx-font-family: "Consolas";
+    -fx-font-size: 14px;
+
+    -fx-padding: 0 14px;
+}
+
+.bet-name-field:focused {
+    -fx-border-color: #E01B26;
+    -fx-border-width: 1.5px;
+
+    -fx-effect: dropshadow(gaussian, rgba(184, 13, 23, 0.25), 8, 0.1, 0, 0);
+}
+
+/* =========================================
+   RODAPÉ E BOTÕES
+   ========================================= */
+
+.card-footer {
+    -fx-alignment: CENTER_RIGHT;
+    -fx-spacing: 165px;
+
+    -fx-padding: 15px 0 0 0;
+
+    -fx-border-color: rgba(130, 140, 155, 0.30);
+    -fx-border-width: 1px 0 0 0;
+}
+
+/* Botão cancelar */
+
+.secondary-button {
+    -fx-pref-width: 102px;
+    -fx-pref-height: 35px;
+
+    -fx-background-color: #111521;
+    -fx-background-radius: 3px;
+
+    -fx-border-color: #343D50;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+
+    -fx-text-fill: #AEB2BC;
+    -fx-font-family: "Arial";
+    -fx-font-size: 8px;
+    -fx-font-weight: bold;
+
+    -fx-cursor: hand;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #1B2230;
+    -fx-border-color: #657087;
+    -fx-text-fill: #FFFFFF;
+}
+
+/* Botão iniciar partida */
+
+.primary-button {
+    -fx-pref-width: 137px;
+    -fx-pref-height: 35px;
+
+    -fx-background-color: #B80D17;
+    -fx-background-radius: 4px;
+
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: "Arial";
+    -fx-font-size: 8px;
+    -fx-font-weight: bold;
+
+    -fx-cursor: hand;
+
+    -fx-effect: dropshadow(gaussian, rgba(184, 13, 23, 0.35), 10, 0.2, 0, 2);
+}
+
+.primary-button:hover {
+    -fx-background-color: #D01823;
+    -fx-effect: dropshadow(gaussian, rgba(224, 27, 38, 0.55), 14, 0.2, 0, 2);
+}
+
+.primary-button:pressed {
+    -fx-background-color: #8F0911;
+    -fx-effect: none;
+}
+
+
+
+/* =========================================
+   FEEDBACK DE SUCESSO
+   ========================================= */
+
+.sucesso {
+    -fx-background-color: #174B3D;
+    -fx-font-family: "Arial";
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #A8E6CF;
+
+    -fx-padding: 7px 10px;
+
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #28765E;
+    -fx-border-width: 1px;
+}
+
+/* =========================================
+   FEEDBACK DE ERRO
+   ========================================= */
+
+.erro {
+    -fx-background-color: #4A1118;
+    -fx-font-family: "Arial";
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFB3B8;
+
+    -fx-padding: 7px 10px;
+
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #B80D17;
+    -fx-border-width: 1px;
+}
+

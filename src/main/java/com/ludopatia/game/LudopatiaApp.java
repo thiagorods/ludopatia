@@ -2,6 +2,7 @@ package com.ludopatia.game;
 
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
+import com.ludopatia.game.menu.LudopatiaSceneFactory;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.layout.Region;
@@ -22,9 +23,16 @@ public class LudopatiaApp extends GameApplication {
 
         settings.setWidth(screenWidth);
         settings.setHeight(screenHeight);
+
         settings.setTitle("Ludopatia");
+
         settings.setFullScreenAllowed(true);
         settings.setFullScreenFromStart(true);
+
+        settings.setMainMenuEnabled(true);
+        //settings.setGameMenuEnabled(true);
+
+        settings.setSceneFactory(new LudopatiaSceneFactory());
     }
 
     @Override
@@ -32,7 +40,7 @@ public class LudopatiaApp extends GameApplication {
         try {
             FXMLLoader loader = new FXMLLoader(
                     getClass().getResource(
-                            "/com/ludopatia/game/view/fxml/main-menu-view.fxml"
+                            "/com/ludopatia/game/view/fxml/name-selection-view.fxml"
                     )
             );
 

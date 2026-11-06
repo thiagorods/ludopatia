@@ -1,0 +1,381 @@
+
+/* =========================================
+   CONFIGURAÇÕES GERAIS
+   ========================================= */
+
+.main-view {
+    -fx-background-color: #030B10;
+    -fx-font-family: "Arial";
+}
+
+/* =========================================
+   CABEÇALHO
+   ========================================= */
+
+.header-container {
+    -fx-pref-height: 90px;
+    -fx-min-height: 90px;
+    -fx-max-height: 90px;
+
+    -fx-background-color: #030B10;
+
+    -fx-border-color: transparent transparent #A70F1B transparent;
+    -fx-border-width: 0 0 2px 0;
+}
+
+.header-content {
+    -fx-alignment: CENTER_LEFT;
+    -fx-spacing: 0;
+    -fx-padding: 5px 30px;
+}
+
+/* Identidade do jogo */
+
+.game-brand {
+    -fx-alignment: CENTER_LEFT;
+    -fx-spacing: 12px;
+    -fx-pref-width: 410px;
+}
+
+.brand-text {
+    -fx-alignment: CENTER_LEFT;
+    -fx-spacing: 0;
+}
+
+.brand-title {
+    -fx-text-fill: #F1F3F5;
+    -fx-font-size: 39px;
+    -fx-font-weight: bold;
+}
+
+.brand-subtitle {
+    -fx-text-fill: #9BAFBE;
+    -fx-font-size: 11px;
+    -fx-letter-spacing: 4px;
+}
+
+/* Indicadores globais */
+
+.global-statistics {
+    -fx-alignment: CENTER_LEFT;
+    -fx-spacing: 20px;
+}
+
+.stat-item {
+    -fx-alignment: CENTER_LEFT;
+    -fx-spacing: 12px;
+    -fx-padding: 0 15px;
+}
+
+.stat-text {
+    -fx-alignment: CENTER_LEFT;
+    -fx-spacing: 3px;
+}
+
+.stat-label {
+    -fx-text-fill: #9BAFBE;
+    -fx-font-size: 10px;
+}
+
+.stat-value {
+    -fx-text-fill: #F1F3F5;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.stat-separator {
+    -fx-pref-width: 1px;
+    -fx-min-width: 1px;
+    -fx-max-width: 1px;
+
+    -fx-pref-height: 40px;
+    -fx-background-color: #263A46;
+}
+
+/* Data atual */
+
+.game-date {
+    -fx-alignment: CENTER;
+    -fx-spacing: 15px;
+    -fx-padding: 0 5px 0 20px;
+
+    -fx-border-color: transparent transparent transparent #263A46;
+    -fx-border-width: 0 0 0 1px;
+}
+
+.date-text {
+    -fx-alignment: CENTER_LEFT;
+    -fx-spacing: 0;
+}
+
+.date-label {
+    -fx-text-fill: #9BAFBE;
+    -fx-font-size: 18px;
+}
+
+.date-value {
+    -fx-text-fill: #F1F3F5;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+/* =========================================
+   ÁREA CENTRAL / MAPA
+   ========================================= */
+
+.game-area {
+    -fx-background-color: #06131B;
+}
+
+.map-background {
+    -fx-background-color: #07151E;
+}
+
+/*
+ * O mapa poderá ser inserido posteriormente
+ * como ImageView ou componente de renderização.
+ */
+
+/* =========================================
+   MENU LATERAL
+   ========================================= */
+
+.side-menu {
+    -fx-pref-width: 243px;
+    -fx-min-width: 243px;
+    -fx-max-width: 243px;
+
+    -fx-background-color: rgba(3, 11, 16, 0.94);
+
+    -fx-background-radius: 5px;
+    -fx-border-color: #263D4B;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+}
+
+.menu-option {
+    -fx-pref-height: 65px;
+    -fx-min-height: 65px;
+    -fx-max-height: 65px;
+
+    -fx-alignment: CENTER_LEFT;
+    -fx-spacing: 18px;
+    -fx-padding: 0 17px;
+
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #26313A transparent;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.menu-option-active {
+    -fx-background-color: linear-gradient(
+        to right,
+        rgba(184, 13, 23, 0.35),
+        rgba(184, 13, 23, 0.05)
+    );
+
+    -fx-border-color: #B80D17 transparent #26313A transparent;
+    -fx-border-width: 0 0 1px 4px;
+}
+
+.menu-icon {
+    -fx-min-width: 30px;
+    -fx-alignment: CENTER;
+
+    -fx-text-fill: #F2F3F5;
+    -fx-font-size: 23px;
+}
+
+.menu-option-active .menu-icon {
+    -fx-text-fill: #FF3440;
+}
+
+.menu-label {
+    -fx-text-fill: #B9C7D1;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.menu-option-active .menu-label {
+    -fx-text-fill: #FF414B;
+}
+
+/* =========================================
+   PAINEL DO PAÍS
+   ========================================= */
+
+.country-panel {
+    -fx-pref-width: 225px;
+    -fx-min-width: 225px;
+    -fx-max-width: 225px;
+
+    -fx-padding: 13px 15px;
+    -fx-spacing: 7px;
+
+    -fx-background-color: rgba(3, 11, 16, 0.96);
+
+    -fx-background-radius: 5px;
+    -fx-border-color: #72202A;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+}
+
+.panel-title {
+    -fx-text-fill: #C5D4DE;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.panel-divider {
+    -fx-pref-height: 1px;
+    -fx-min-height: 1px;
+    -fx-max-height: 1px;
+
+    -fx-background-color: #263A46;
+}
+
+.country-heading {
+    -fx-alignment: CENTER_LEFT;
+    -fx-spacing: 12px;
+    -fx-padding: 4px 0;
+}
+
+.country-flag {
+    -fx-font-size: 30px;
+}
+
+.country-name {
+    -fx-text-fill: #F1F3F5;
+    -fx-font-size: 19px;
+    -fx-font-weight: bold;
+}
+
+.country-status {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 9px;
+    -fx-font-weight: bold;
+
+    -fx-background-color: #A70F1B;
+    -fx-background-radius: 3px;
+    -fx-padding: 3px 7px;
+}
+
+.country-description {
+    -fx-text-fill: #9BAFBE;
+    -fx-font-size: 10px;
+    -fx-padding: 2px 0 4px 0;
+}
+
+.country-data-row {
+    -fx-alignment: CENTER_LEFT;
+    -fx-spacing: 5px;
+    -fx-padding: 2px 0;
+}
+
+.country-data-row Label {
+    -fx-text-fill: #AFC0CD;
+    -fx-font-size: 10px;
+}
+
+.country-data-row .data-value {
+    -fx-text-fill: #E2E7EB;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER_RIGHT;
+}
+
+.section-label {
+    -fx-text-fill: #B7C8D2;
+    -fx-font-size: 9px;
+    -fx-font-weight: bold;
+
+    -fx-padding: 5px 0 1px 0;
+}
+
+.details-button {
+    -fx-alignment: CENTER;
+    -fx-spacing: 12px;
+
+    -fx-pref-height: 35px;
+    -fx-min-height: 35px;
+
+    -fx-padding: 0 8px;
+    -fx-background-color: transparent;
+
+    -fx-border-color: #B80D17;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+
+    -fx-cursor: hand;
+}
+
+.details-button Label {
+    -fx-text-fill: #FF3540;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.details-button:hover {
+    -fx-background-color: rgba(184, 13, 23, 0.18);
+}
+
+/* =========================================
+   PAINEL DE NOTÍCIAS
+   ========================================= */
+
+.news-panel {
+    -fx-pref-width: 450px;
+    -fx-min-width: 450px;
+    -fx-max-width: 450px;
+
+    -fx-padding: 8px 12px;
+    -fx-spacing: 5px;
+
+    -fx-background-color: rgba(3, 11, 16, 0.96);
+
+    -fx-background-radius: 5px;
+    -fx-border-color: #344B59;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+}
+
+.news-heading {
+    -fx-alignment: CENTER_LEFT;
+    -fx-spacing: 9px;
+    -fx-padding: 0 0 3px 0;
+}
+
+.news-accent {
+    -fx-pref-width: 2px;
+    -fx-min-width: 2px;
+    -fx-max-width: 2px;
+
+    -fx-pref-height: 13px;
+    -fx-background-color: #FF2633;
+}
+
+.news-title {
+    -fx-text-fill: #B9CAD5;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.news-item {
+    -fx-alignment: CENTER_LEFT;
+    -fx-spacing: 10px;
+    -fx-padding: 2px 0;
+}
+
+.news-bullet {
+    -fx-text-fill: #FF2633;
+    -fx-font-size: 17px;
+}
+
+.news-text {
+    -fx-text-fill: #AFC0CD;
+    -fx-font-size: 10px;
+}
+
+.news-time {
+    -fx-text-fill: #7895A7;
+    -fx-font-size: 10px;
+}

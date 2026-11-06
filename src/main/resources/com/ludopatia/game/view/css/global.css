@@ -19,3 +19,43 @@
 .image-view {
     -fx-smooth: true;
 }
+
+
+/* =========================================
+   FEEDBACK DE SUCESSO
+   ========================================= */
+
+.sucesso {
+    -fx-background-color: #174B3D;
+    -fx-font-family: "Arial";
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #A8E6CF;
+
+    -fx-padding: 7px 10px;
+
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #28765E;
+    -fx-border-width: 1px;
+}
+
+/* =========================================
+   FEEDBACK DE ERRO
+   ========================================= */
+
+.erro {
+    -fx-background-color: #4A1118;
+    -fx-font-family: "Arial";
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFB3B8;
+
+    -fx-padding: 7px 10px;
+
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #B80D17;
+    -fx-border-width: 1px;
+}
+

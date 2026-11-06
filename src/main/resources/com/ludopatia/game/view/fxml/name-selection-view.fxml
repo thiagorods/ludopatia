@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane prefHeight="770.0" prefWidth="864.0" styleClass="main-menu-background" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ludopatia.game.controller.NameSelectionController">
+    <children>
+        <Pane prefHeight="200.0" prefWidth="200.0" styleClass="overlay" />
+        <VBox prefHeight="666.0" prefWidth="704.0" StackPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../assets/images/icon-logo-ludopatia.png" />
+                    </image>
+                </ImageView>
+                <Label styleClass="game-title" text="LUDOPATIA">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Label styleClass="game-subtitle" text="A Epidemia das Apostas">
+                    <VBox.margin>
+                        <Insets bottom="10.0" />
+                    </VBox.margin>
+                </Label>
+
+                <VBox styleClass="creation-card">
+
+                    <!-- Cabeçalho -->
+                    <HBox styleClass="card-header">
+                        <children>
+                            <StackPane styleClass="header-icon">
+                                <!-- Insira aqui o ImageView do símbolo de espadas -->
+                            </StackPane>
+
+                            <Label styleClass="header-title" text="INICIAR PARTIDA" />
+                        </children>
+                    </HBox>
+
+                    <!-- Separador -->
+                    <Pane styleClass="card-divider" />
+
+                    <!-- Instruções -->
+                    <Label styleClass="card-description" text="Dê um nome à sua casa de apostas. Este nome aparecerá em todo o jogo." wrapText="true" />
+                    <Label styleClass="field-label" text="DIGITE O NOME DA SUA BET:" />
+                    <!-- Entrada -->
+                    <TextField fx:id="campoNomeCasa" promptText="Ex: ApostaReal, BetMaster, LuckyHouse..." styleClass="bet-name-field" />
+               <Label fx:id="labelStatus">
+                  <VBox.margin>
+                     <Insets />
+                  </VBox.margin>
+               </Label>
+                    <Label styleClass="field-hint" text="Mínimo 3 caracteres · Máximo 20 caracteres · Sem caracteres especiais" />
+                    <HBox styleClass="card-footer">
+                        <children>
+                            <Button onMouseClicked="#onCancelarButtonClicked" styleClass="secondary-button" text="CANCELAR" />
+                            <Button onAction="#onIniciarButtonClicked" styleClass="primary-button" text="INICIAR PARTIDA  →" />
+                        </children>
+                    </HBox>
+                </VBox>
+            </children>
+            <StackPane.margin>
+                <Insets />
+            </StackPane.margin>
+        </VBox>
+    </children>
+   <stylesheets>
+      <URL value="@../css/main-menu.css" />
+      <URL value="@../css/name-selection.css" />
+   </stylesheets>
+</StackPane>

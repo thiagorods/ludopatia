@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane styleClass="main-menu-background" stylesheets="@../css/main-menu.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ludopatia.game.controller.MainMenuController">
+<StackPane prefHeight="770.0" prefWidth="864.0" styleClass="main-menu-background" stylesheets="@../css/main-menu.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ludopatia.game.controller.MainMenuViewController">
    <children>
       <Pane prefHeight="200.0" prefWidth="200.0" styleClass="overlay" />
       <VBox prefHeight="666.0" prefWidth="704.0" StackPane.alignment="CENTER">
@@ -32,7 +32,7 @@
             </Label>
             <VBox prefHeight="200.0" prefWidth="100.0" styleClass="login-card">
                <children>
-                  <HBox prefHeight="100.0" prefWidth="200.0" styleClass="option-box">
+                  <HBox onMouseClicked="#onIniciarButtonClicked" prefHeight="100.0" prefWidth="200.0" styleClass="option-box">
                      <children>
                         <ImageView fitHeight="47.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true" styleClass="option-icon">
                            <image>
@@ -40,16 +40,6 @@
                            </image>
                         </ImageView>
                         <Label styleClass="option-text" text="Iniciar Partida" />
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" styleClass="option-box">
-                     <children>
-                        <ImageView fitHeight="48.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true" styleClass="option-icon">
-                           <image>
-                              <Image url="@../../assets/images/main-menu/icon-config.png" />
-                           </image>
-                        </ImageView>
-                        <Label styleClass="option-text" text="Configurações" />
                      </children>
                   </HBox>
                   <HBox onMouseClicked="#onSairButtonClicked" prefHeight="100.0" prefWidth="200.0" styleClass="option-box">

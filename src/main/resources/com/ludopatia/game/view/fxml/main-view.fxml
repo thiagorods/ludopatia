@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane
+        prefHeight="770.0"
+        prefWidth="1366.0"
+        styleClass="main-view"
+        stylesheets="@../css/main-view.css"
+        xmlns="http://javafx.com/javafx/25"
+        xmlns:fx="http://javafx.com/fxml/1">
+
+   <!-- =====================================
+        CABEÇALHO GLOBAL
+        ===================================== -->
+
+   <top>
+      <StackPane styleClass="header-container">
+
+         <HBox styleClass="header-content">
+
+            <!-- Identidade do jogo -->
+            <HBox styleClass="game-brand">
+               <ImageView
+                       fitHeight="76.0"
+                       fitWidth="76.0"
+                       preserveRatio="true">
+                  <image>
+                     <Image url="@../../assets/images/icon-logo-ludopatia.png"/>
+                  </image>
+               </ImageView>
+
+               <VBox styleClass="brand-text">
+                  <Label
+                          text="LUDOPATHY"
+                          styleClass="brand-title"/>
+
+                  <Label
+                          text="A EPIDEMIA DAS APOSTAS"
+                          styleClass="brand-subtitle"/>
+               </VBox>
+            </HBox>
+
+            <!-- Indicadores globais -->
+            <HBox styleClass="global-statistics">
+
+               <HBox styleClass="stat-item">
+                  <ImageView
+                          fitHeight="42.0"
+                          fitWidth="42.0"
+                          preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/images/icon-paises-infectados.png"/>
+                     </image>
+                  </ImageView>
+
+                  <VBox styleClass="stat-text">
+                     <Label
+                             text="PAÍSES INFECTADOS"
+                             styleClass="stat-label"/>
+
+                     <Label
+                             text="42 / 195"
+                             styleClass="stat-value"/>
+                  </VBox>
+               </HBox>
+
+               <Region styleClass="stat-separator"/>
+
+               <HBox styleClass="stat-item">
+                  <ImageView
+                          fitHeight="36.0"
+                          fitWidth="36.0"
+                          preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/images/icon-total-apostadores.png"/>
+                     </image>
+                  </ImageView>
+
+                  <VBox styleClass="stat-text">
+                     <Label
+                             text="TOTAL DE APOSTADORES"
+                             styleClass="stat-label"/>
+
+                     <Label
+                             text="3.428.775"
+                             styleClass="stat-value"/>
+                  </VBox>
+               </HBox>
+
+            </HBox>
+
+            <!-- Espaçamento flexível -->
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <!-- Data do jogo -->
+            <HBox styleClass="game-date">
+               <ImageView
+                       fitHeight="42.0"
+                       fitWidth="42.0"
+                       preserveRatio="true">
+                  <image>
+                     <Image url="@../../assets/images/icon-naipe-espadas-vermelho.png"/>
+                  </image>
+               </ImageView>
+
+               <VBox styleClass="date-text">
+                  <Label
+                          text="DIA ATUAL"
+                          styleClass="date-label"/>
+
+                  <Label
+                          text="01/01/2026"
+                          styleClass="date-value"/>
+               </VBox>
+            </HBox>
+
+         </HBox>
+      </StackPane>
+   </top>
+
+   <!-- =====================================
+        ÁREA PRINCIPAL
+        ===================================== -->
+
+   <center>
+      <StackPane styleClass="game-area">
+
+         <!-- Fundo do mapa -->
+         <Pane
+                 fx:id="mapContainer"
+                 styleClass="map-background"/>
+
+         <!-- Menu lateral -->
+         <VBox
+                 fx:id="sideMenu"
+                 styleClass="side-menu"
+                 StackPane.alignment="TOP_LEFT">
+
+            <StackPane.margin>
+               <Insets top="15.0" right="15.0" bottom="15.0" left="15.0"/>
+            </StackPane.margin>
+
+            <HBox
+                    styleClass="menu-option menu-option-active">
+               <Label text="◎" styleClass="menu-icon"/>
+               <Label text="CONSULTAR PAÍS" styleClass="menu-label"/>
+            </HBox>
+
+            <HBox styleClass="menu-option">
+               <Label text="♠" styleClass="menu-icon"/>
+               <Label text="ESTRATÉGIAS" styleClass="menu-label"/>
+            </HBox>
+
+            <HBox styleClass="menu-option">
+               <Label text="♦" styleClass="menu-icon"/>
+               <Label text="RECURSOS" styleClass="menu-label"/>
+            </HBox>
+
+         </VBox>
+
+         <!-- Painel de informações do país -->
+         <VBox
+                 fx:id="countryPanel"
+                 styleClass="country-panel"
+                 StackPane.alignment="TOP_RIGHT">
+
+            <StackPane.margin>
+               <Insets top="15.0" right="15.0" bottom="15.0" left="15.0"/>
+            </StackPane.margin>
+
+            <Label
+                    text="PAÍS EM FOCO"
+                    styleClass="panel-title"/>
+
+            <Region styleClass="panel-divider"/>
+
+            <HBox styleClass="country-heading">
+               <Label text="🇧🇷" styleClass="country-flag"/>
+               <VBox>
+                  <Label text="BRASIL" styleClass="country-name"/>
+                  <Label text="INFECTADO" styleClass="country-status"/>
+               </VBox>
+            </HBox>
+
+            <Label
+                    text="País da América do Sul."
+                    styleClass="country-description"/>
+
+            <Region styleClass="panel-divider"/>
+
+            <HBox styleClass="country-data-row">
+               <Label text="POPULAÇÃO"/>
+               <Label text="216.422.446" styleClass="data-value"/>
+            </HBox>
+
+            <Region styleClass="panel-divider"/>
+
+            <Label
+                    text="ATRIBUTOS FIXOS"
+                    styleClass="section-label"/>
+
+            <HBox styleClass="country-data-row">
+               <Label text="Acessibilidade"/>
+               <Label text="—" styleClass="data-value"/>
+            </HBox>
+
+            <HBox styleClass="country-data-row">
+               <Label text="Receptividade"/>
+               <Label text="—" styleClass="data-value"/>
+            </HBox>
+
+            <HBox styleClass="country-data-row">
+               <Label text="Vulnerabilidade"/>
+               <Label text="—" styleClass="data-value"/>
+            </HBox>
+
+            <HBox styleClass="country-data-row">
+               <Label text="Resistência"/>
+               <Label text="—" styleClass="data-value"/>
+            </HBox>
+
+            <Label
+                    text="ATRIBUTOS DINÂMICOS"
+                    styleClass="section-label"/>
+
+            <HBox styleClass="country-data-row">
+               <Label text="Não Expostos"/>
+               <Label text="—" styleClass="data-value"/>
+            </HBox>
+
+            <HBox styleClass="country-data-row">
+               <Label text="Expostos"/>
+               <Label text="—" styleClass="data-value"/>
+            </HBox>
+
+            <HBox styleClass="country-data-row">
+               <Label text="Jogadores"/>
+               <Label text="24.781.332" styleClass="data-value"/>
+            </HBox>
+
+            <HBox styleClass="country-data-row">
+               <Label text="Jogadores Recorrentes"/>
+               <Label text="—" styleClass="data-value"/>
+            </HBox>
+
+            <HBox styleClass="country-data-row">
+               <Label text="Jogadores em Risco"/>
+               <Label text="—" styleClass="data-value"/>
+            </HBox>
+
+            <HBox styleClass="country-data-row">
+               <Label text="Recuperados"/>
+               <Label text="—" styleClass="data-value"/>
+            </HBox>
+
+            <HBox styleClass="country-data-row">
+               <Label text="Em Falência"/>
+               <Label text="—" styleClass="data-value"/>
+            </HBox>
+
+            <HBox styleClass="details-button">
+               <Label text="VER DETALHES"/>
+               <Label text="›"/>
+            </HBox>
+
+         </VBox>
+
+         <!-- Painel de notícias -->
+         <VBox
+                 fx:id="newsPanel"
+                 styleClass="news-panel"
+                 StackPane.alignment="BOTTOM_RIGHT">
+
+            <StackPane.margin>
+               <Insets top="15.0" right="15.0" bottom="15.0" left="15.0"/>
+            </StackPane.margin>
+
+            <HBox styleClass="news-heading">
+               <Region styleClass="news-accent"/>
+               <Label
+                       text="ÚLTIMAS ATUALIZAÇÕES"
+                       styleClass="news-title"/>
+            </HBox>
+
+            <HBox styleClass="news-item">
+               <Label text="•" styleClass="news-bullet"/>
+               <Label
+                       text="Brasil teve aumento de 11,4% nos apostadores."
+                       styleClass="news-text"
+                       HBox.hgrow="ALWAYS"/>
+               <Label text="14:20" styleClass="news-time"/>
+            </HBox>
+
+            <HBox styleClass="news-item">
+               <Label text="•" styleClass="news-bullet"/>
+               <Label
+                       text="Nova casa de aposta ativada: Betano."
+                       styleClass="news-text"
+                       HBox.hgrow="ALWAYS"/>
+               <Label text="13:47" styleClass="news-time"/>
+            </HBox>
+
+            <HBox styleClass="news-item">
+               <Label text="•" styleClass="news-bullet"/>
+               <Label
+                       text="Alemanha registrou queda na taxa de infecção."
+                       styleClass="news-text"
+                       HBox.hgrow="ALWAYS"/>
+               <Label text="12:33" styleClass="news-time"/>
+            </HBox>
+
+            <HBox styleClass="news-item">
+               <Label text="•" styleClass="news-bullet"/>
+               <Label
+                       text="EUA teve aumento de 8% nos apostadores."
+                       styleClass="news-text"
+                       HBox.hgrow="ALWAYS"/>
+               <Label text="11:12" styleClass="news-time"/>
+            </HBox>
+
+         </VBox>
+
+      </StackPane>
+   </center>
+
+</BorderPane>
