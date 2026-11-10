@@ -1,4 +1,3 @@
-
 package com.ludopatia.game.service;
 
 import com.ludopatia.game.infrastructure.database.ConnectionFactory;

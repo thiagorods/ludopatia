@@ -1,4 +1,3 @@
-
 package com.ludopatia.game.infrastructure.database;
 
 import com.ludopatia.game.model.entities.Pais;

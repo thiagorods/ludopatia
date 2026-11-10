@@ -1,4 +1,3 @@
-
 package com.ludopatia.game.infrastructure.database;
 
 import java.sql.Connection;

@@ -1,4 +1,3 @@
-
 package com.ludopatia.game.model.dao;
 
 import com.ludopatia.game.model.entities.Recurso;
