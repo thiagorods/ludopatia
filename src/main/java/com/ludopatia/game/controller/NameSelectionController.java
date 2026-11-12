@@ -1,12 +1,15 @@
 package com.ludopatia.game.controller;
 
+import com.almasb.fxgl.app.FXGLApplication;
+import com.almasb.fxgl.app.GameController;
+import com.almasb.fxgl.dsl.FXGL;
+import com.ludopatia.game.menu.NameSelectionMenuActions;
+import com.ludopatia.game.session.PartidaConfig;
 import com.ludopatia.game.utils.validation.ResultadoValidacaoNome;
 import com.ludopatia.game.utils.validation.ValidadorNomeCasa;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-
-import static com.almasb.fxgl.dsl.FXGLForKtKt.getGameController;
 
 public class NameSelectionController {
     @FXML
@@ -15,16 +18,22 @@ public class NameSelectionController {
     @FXML
     private Label labelStatus;
 
+    private NameSelectionMenuActions actions;
+
+    public void setActions(NameSelectionMenuActions actions) {
+        this.actions = actions;
+    }
+
     @FXML
     protected void onCancelarButtonClicked() {
-        getGameController().gotoMainMenu();
+        actions.onCancelGame();
     }
 
     @FXML
     protected void onIniciarButtonClicked() {
-        String nomeCasa = campoNomeCasa.getText();
+        String nomeEmpresa = campoNomeCasa.getText();
 
-        ResultadoValidacaoNome resultado = ValidadorNomeCasa.validar(nomeCasa);
+        ResultadoValidacaoNome resultado = ValidadorNomeCasa.validar(nomeEmpresa);
 
         labelStatus.getStyleClass().removeAll("sucesso", "erro");
 
@@ -34,6 +43,10 @@ public class NameSelectionController {
                 labelStatus.setText("Nome da casa de apostas válido!");
                 labelStatus.getStyleClass().add("sucesso");
 
+                /* repassa o nome da empresa para ser configurado no estado da partida
+                * dentro de "initGameVars" na classe principal
+                *  */
+                actions.onAdvanceGame(nomeEmpresa);
                 break;
 
             case NOME_VAZIO:

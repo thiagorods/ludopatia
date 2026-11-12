@@ -1,7 +1,7 @@
 package com.ludopatia.game.infrastructure.database;
 
-import com.ludopatia.game.model.entities.Pais;
-import com.ludopatia.game.model.entities.PaisCategoria;
+import com.ludopatia.game.infrastructure.model.entities.Pais;
+import com.ludopatia.game.infrastructure.model.entities.PaisCategoria;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -39,7 +39,7 @@ public final class PaisSeeder {
         List<Pais> paises = List.of(
 
                 new Pais(
-                        1L, "Brasil", "América do Sul", 210_000_000L,
+                        1, "Brasil", "América do Sul", 210_000_000L,
                         90, 85, 75, 80, 40.0,
                         PaisCategoria.CRESCIMENTO_PROMISSOR,
                         "Mercado muito receptivo e favorável à expansão global, " +
@@ -47,7 +47,7 @@ public final class PaisSeeder {
                 ),
 
                 new Pais(
-                        2L, "Peru", "América do Sul", 35_000_000L,
+                        2, "Peru", "América do Sul", 35_000_000L,
                         80, 75, 65, 40, 20.0,
                         PaisCategoria.ENTRADA_FACIL,
                         "Mercado regional acessível, com boas condições para " +
@@ -56,7 +56,7 @@ public final class PaisSeeder {
                 ),
 
                 new Pais(
-                        3L, "Estados Unidos", "América do Norte", 340_000_000L,
+                        3, "Estados Unidos", "América do Norte", 340_000_000L,
                         95, 75, 55, 65, 55.0,
                         PaisCategoria.CRESCIMENTO_PROMISSOR,
                         "Mercado global consolidado, com importantes conexões. " +
@@ -65,7 +65,7 @@ public final class PaisSeeder {
                 ),
 
                 new Pais(
-                        4L, "Reino Unido", "Europa", 70_000_000L,
+                        4, "Reino Unido", "Europa", 70_000_000L,
                         70, 90, 35, 95, 70.0,
                         PaisCategoria.MERCADO_DESAFIADOR,
                         "Mercado de referência global. Difícil de conquistar, " +
@@ -74,7 +74,7 @@ public final class PaisSeeder {
                 ),
 
                 new Pais(
-                        5L, "Itália", "Europa", 60_000_000L,
+                        5, "Itália", "Europa", 60_000_000L,
                         60, 80, 45, 75, 30.0,
                         PaisCategoria.CRESCIMENTO_PROMISSOR,
                         "Mercado tradicional com grande público e conexões " +
@@ -83,7 +83,7 @@ public final class PaisSeeder {
                 ),
 
                 new Pais(
-                        6L, "Rússia", "Europa e Ásia", 140_000_000L,
+                        6, "Rússia", "Europa e Ásia", 140_000_000L,
                         55, 65, 50, 80, 10.0,
                         PaisCategoria.EXPANSAO_LIMITADA,
                         "Mercado intercontinental com barreiras de entrada. " +
@@ -92,7 +92,7 @@ public final class PaisSeeder {
                 ),
 
                 new Pais(
-                        7L, "China", "Ásia", 1_400_000_000L,
+                        7, "China", "Ásia", 1_400_000_000L,
                         35, 55, 50, 100, 80.0,
                         PaisCategoria.MERCADO_BLOQUEADO,
                         "Mercado inviável. Possui grande dificuldade de domínio, " +
@@ -100,7 +100,7 @@ public final class PaisSeeder {
                 ),
 
                 new Pais(
-                        8L, "Nigéria", "África", 235_000_000L,
+                        8, "Nigéria", "África", 235_000_000L,
                         80, 85, 90, 25, 15.0,
                         PaisCategoria.ENTRADA_FACIL,
                         "Mercado emergente com condições favoráveis para uma " +
@@ -109,7 +109,7 @@ public final class PaisSeeder {
                 ),
 
                 new Pais(
-                        9L, "África do Sul", "África", 65_000_000L,
+                        9, "África do Sul", "África", 65_000_000L,
                         65, 70, 75, 55, 25.0,
                         PaisCategoria.CRESCIMENTO_PROMISSOR,
                         "Mercado com grande potencial de crescimento e retorno. " +
@@ -117,7 +117,7 @@ public final class PaisSeeder {
                 ),
 
                 new Pais(
-                        10L, "Austrália", "Oceania", 25_000_000L,
+                        10, "Austrália", "Oceania", 25_000_000L,
                         80, 65, 45, 80, 20.0,
                         PaisCategoria.EXPANSAO_LIMITADA,
                         "Mercado com barreiras relevantes à expansão e potencial " +

@@ -1,13 +1,13 @@
 package com.ludopatia.game.service;
 
-import com.ludopatia.game.model.dao.MarcoInfluenciaDao;
-import com.ludopatia.game.model.dao.PartidaMarcoDao;
+import com.ludopatia.game.infrastructure.model.dao.MarcoInfluenciaDao;
+import com.ludopatia.game.infrastructure.model.dao.PartidaMarcoDao;
 
-import com.ludopatia.game.model.dao.impl.MarcoInfluenciaDaoJDBC;
-import com.ludopatia.game.model.dao.impl.PartidaMarcoDaoJDBC;
+import com.ludopatia.game.infrastructure.model.dao.impl.MarcoInfluenciaDaoJDBC;
+import com.ludopatia.game.infrastructure.model.dao.impl.PartidaMarcoDaoJDBC;
 
-import com.ludopatia.game.model.entities.MarcoInfluencia;
-import com.ludopatia.game.model.entities.PartidaMarco;
+import com.ludopatia.game.infrastructure.model.entities.MarcoInfluencia;
+import com.ludopatia.game.infrastructure.model.entities.PartidaMarco;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

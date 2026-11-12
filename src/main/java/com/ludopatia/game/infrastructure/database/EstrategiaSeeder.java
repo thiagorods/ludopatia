@@ -1,6 +1,6 @@
 package com.ludopatia.game.infrastructure.database;
 
-import com.ludopatia.game.model.entities.Estrategia;
+import com.ludopatia.game.infrastructure.model.entities.Estrategia;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

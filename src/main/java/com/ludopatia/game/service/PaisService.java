@@ -1,9 +1,9 @@
 package com.ludopatia.game.service;
 
 import com.ludopatia.game.infrastructure.database.ConnectionFactory;
-import com.ludopatia.game.model.dao.PaisDao;
-import com.ludopatia.game.model.dao.impl.PaisDaoJDBC;
-import com.ludopatia.game.model.entities.Pais;
+import com.ludopatia.game.infrastructure.model.dao.PaisDao;
+import com.ludopatia.game.infrastructure.model.dao.impl.PaisDaoJDBC;
+import com.ludopatia.game.infrastructure.model.entities.Pais;
 
 import java.sql.Connection;
 import java.sql.SQLException;

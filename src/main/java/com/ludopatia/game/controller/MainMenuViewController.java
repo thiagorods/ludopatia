@@ -1,5 +1,6 @@
 package com.ludopatia.game.controller;
 
+import com.ludopatia.game.menu.MainMenuActions;
 import javafx.fxml.FXML;
 
 

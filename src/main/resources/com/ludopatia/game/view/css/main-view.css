@@ -132,9 +132,13 @@
 }
 
 /*
- * O mapa poderá ser inserido posteriormente
- * como ImageView ou componente de renderização.
+ * O mapa interativo (MapaView) é criado por código e inserido dentro do Pane "mapContainer".
+ * Ele não pinta fundo próprio: o oceano é o fundo do .map-background acima.
  */
+
+.map-view {
+    -fx-background-color: transparent;
+}
 
 /* =========================================
    MENU LATERAL
@@ -205,9 +209,11 @@
    ========================================= */
 
 .country-panel {
-    -fx-pref-width: 225px;
-    -fx-min-width: 225px;
-    -fx-max-width: 225px;
+    -fx-pref-width: 230px;
+    -fx-min-width: 230px;
+    -fx-max-width: 230px;
+
+    /* Altura calculada pelo conteúdo (antes era fixa em 530px). */
 
     -fx-padding: 13px 15px;
     -fx-spacing: 7px;
@@ -241,12 +247,16 @@
 }
 
 .country-flag {
-    -fx-font-size: 30px;
+    -fx-fit-width: 42px;
+    -fx-fit-height: 28px;
+
+    -fx-preserve-ratio: true;
+    -fx-smooth: true;
 }
 
 .country-name {
     -fx-text-fill: #F1F3F5;
-    -fx-font-size: 19px;
+    -fx-font-size: 17px;
     -fx-font-weight: bold;
 }
 
@@ -264,6 +274,12 @@
     -fx-text-fill: #9BAFBE;
     -fx-font-size: 10px;
     -fx-padding: 2px 0 4px 0;
+
+    /* Bloco fixo de 3 linhas: texto maior termina em reticências (o texto completo está na dica). */
+    -fx-alignment: TOP_LEFT;
+    -fx-pref-height: 42px;
+    -fx-min-height: 42px;
+    -fx-max-height: 42px;
 }
 
 .country-data-row {
@@ -326,6 +342,10 @@
     -fx-pref-width: 450px;
     -fx-min-width: 450px;
     -fx-max-width: 450px;
+
+    -fx-pref-height: 125px;
+    -fx-min-height: 125px;
+    -fx-max-height: 125px;
 
     -fx-padding: 8px 12px;
     -fx-spacing: 5px;

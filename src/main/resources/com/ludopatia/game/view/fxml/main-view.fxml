@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -9,15 +11,8 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.geometry.Insets?>
 
-<BorderPane
-        prefHeight="770.0"
-        prefWidth="1366.0"
-        styleClass="main-view"
-        stylesheets="@../css/main-view.css"
-        xmlns="http://javafx.com/javafx/25"
-        xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="770.0" prefWidth="1366.0" styleClass="main-view" stylesheets="@../css/main-view.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ludopatia.game.controller.MainViewController">
 
    <!-- =====================================
         CABEÇALHO GLOBAL
@@ -30,23 +25,16 @@
 
             <!-- Identidade do jogo -->
             <HBox styleClass="game-brand">
-               <ImageView
-                       fitHeight="76.0"
-                       fitWidth="76.0"
-                       preserveRatio="true">
+               <ImageView fitHeight="76.0" fitWidth="76.0" preserveRatio="true">
                   <image>
-                     <Image url="@../../assets/images/icon-logo-ludopatia.png"/>
+                     <Image url="@../../assets/images/icon-logo-ludopatia.png" />
                   </image>
                </ImageView>
 
                <VBox styleClass="brand-text">
-                  <Label
-                          text="LUDOPATHY"
-                          styleClass="brand-title"/>
+                  <Label styleClass="brand-title" text="LUDOPATIA" />
 
-                  <Label
-                          text="A EPIDEMIA DAS APOSTAS"
-                          styleClass="brand-subtitle"/>
+                  <Label styleClass="brand-subtitle" text="A EPIDEMIA DAS APOSTAS" />
                </VBox>
             </HBox>
 
@@ -54,73 +42,68 @@
             <HBox styleClass="global-statistics">
 
                <HBox styleClass="stat-item">
-                  <ImageView
-                          fitHeight="42.0"
-                          fitWidth="42.0"
-                          preserveRatio="true">
+                  <ImageView fitHeight="42.0" fitWidth="42.0" preserveRatio="true">
                      <image>
-                        <Image url="@../../assets/images/icon-paises-infectados.png"/>
+                        <Image url="@../../assets/images/icon-paises-infectados.png" />
                      </image>
                   </ImageView>
 
                   <VBox styleClass="stat-text">
-                     <Label
-                             text="PAÍSES INFECTADOS"
-                             styleClass="stat-label"/>
+                     <Label styleClass="stat-label" text="PAÍSES ATINGIDOS" />
 
-                     <Label
-                             text="42 / 195"
-                             styleClass="stat-value"/>
+                     <Label fx:id="countryReachedNumber" styleClass="stat-value" text="-" />
                   </VBox>
                </HBox>
 
-               <Region styleClass="stat-separator"/>
+               <Region styleClass="stat-separator" />
 
                <HBox styleClass="stat-item">
-                  <ImageView
-                          fitHeight="36.0"
-                          fitWidth="36.0"
-                          preserveRatio="true">
+                  <ImageView fitHeight="36.0" fitWidth="36.0" preserveRatio="true">
                      <image>
-                        <Image url="@../../assets/images/icon-total-apostadores.png"/>
+                        <Image url="@../../assets/images/icon-total-apostadores.png" />
                      </image>
                   </ImageView>
 
                   <VBox styleClass="stat-text">
-                     <Label
-                             text="TOTAL DE APOSTADORES"
-                             styleClass="stat-label"/>
+                     <Label styleClass="stat-label" text="TOTAL DE APOSTADORES" />
 
-                     <Label
-                             text="3.428.775"
-                             styleClass="stat-value"/>
+                     <Label fx:id="totalPlayersNumber" styleClass="stat-value" text="-" />
                   </VBox>
+               </HBox>
+               <Region styleClass="stat-separator" />
+               <HBox styleClass="stat-item">
+                  <children>
+                     <ImageView fitHeight="36.0" fitWidth="47.0" preserveRatio="true">
+                        <image>
+                           <Image url="@../../assets/images/icon-influencia.png" />
+                        </image>
+                     </ImageView>
+                     <VBox styleClass="stat-text">
+                        <children>
+                           <Label styleClass="stat-label" text="INFLUÊNCIA" />
+                           <Label fx:id="totalInfluenceNumber" styleClass="stat-value" text="-" />
+                        </children>
+                     </VBox>
+                  </children>
                </HBox>
 
             </HBox>
 
             <!-- Espaçamento flexível -->
-            <Region HBox.hgrow="ALWAYS"/>
+            <Region HBox.hgrow="ALWAYS" />
 
             <!-- Data do jogo -->
             <HBox styleClass="game-date">
-               <ImageView
-                       fitHeight="42.0"
-                       fitWidth="42.0"
-                       preserveRatio="true">
+               <ImageView fitHeight="42.0" fitWidth="42.0" preserveRatio="true">
                   <image>
-                     <Image url="@../../assets/images/icon-naipe-espadas-vermelho.png"/>
+                     <Image url="@../../assets/images/icon-naipe-espadas-vermelho.png" />
                   </image>
                </ImageView>
 
                <VBox styleClass="date-text">
-                  <Label
-                          text="DIA ATUAL"
-                          styleClass="date-label"/>
+                  <Label styleClass="date-label" text="DIA ATUAL" />
 
-                  <Label
-                          text="01/01/2026"
-                          styleClass="date-value"/>
+                  <Label styleClass="date-value" text="01/01/2026" />
                </VBox>
             </HBox>
 
@@ -136,196 +119,164 @@
       <StackPane styleClass="game-area">
 
          <!-- Fundo do mapa -->
-         <Pane
-                 fx:id="mapContainer"
-                 styleClass="map-background"/>
+         <Pane fx:id="mapContainer" styleClass="map-background" />
 
          <!-- Menu lateral -->
-         <VBox
-                 fx:id="sideMenu"
-                 styleClass="side-menu"
-                 StackPane.alignment="TOP_LEFT">
+         <VBox fx:id="sideMenu" styleClass="side-menu" StackPane.alignment="TOP_LEFT">
 
             <StackPane.margin>
-               <Insets top="15.0" right="15.0" bottom="15.0" left="15.0"/>
+               <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
             </StackPane.margin>
 
-            <HBox
-                    styleClass="menu-option menu-option-active">
-               <Label text="◎" styleClass="menu-icon"/>
-               <Label text="CONSULTAR PAÍS" styleClass="menu-label"/>
+            <HBox fx:id="sideMenuMapOption" onMouseClicked="#onMapaButtonClicked">
+               <Label styleClass="menu-icon" text="◎" />
+               <Label styleClass="menu-label" text="MAPA GLOBAL" />
+               <styleClass>
+                  <String fx:value="menu-option" />
+                  <String fx:value="menu-option-active" />
+               </styleClass>
             </HBox>
 
-            <HBox styleClass="menu-option">
-               <Label text="♠" styleClass="menu-icon"/>
-               <Label text="ESTRATÉGIAS" styleClass="menu-label"/>
+            <HBox fx:id="sideMenuStrategiesOption" onMouseClicked="#onEstrategiasButtonClicked" styleClass="menu-option">
+               <Label styleClass="menu-icon" text="♠" />
+               <Label styleClass="menu-label" text="ESTRATÉGIAS" />
             </HBox>
 
-            <HBox styleClass="menu-option">
-               <Label text="♦" styleClass="menu-icon"/>
-               <Label text="RECURSOS" styleClass="menu-label"/>
+            <HBox fx:id="sideMenuResourcesOption" onMouseClicked="#onRecursosButtonClicked" styleClass="menu-option">
+               <Label styleClass="menu-icon" text="♦" />
+               <Label styleClass="menu-label" text="RECURSOS" />
             </HBox>
 
          </VBox>
 
          <!-- Painel de informações do país -->
-         <VBox
-                 fx:id="countryPanel"
-                 styleClass="country-panel"
-                 StackPane.alignment="TOP_RIGHT">
+         <VBox fx:id="countryPanel" managed="false" styleClass="country-panel" visible="false" StackPane.alignment="TOP_RIGHT">
 
             <StackPane.margin>
-               <Insets top="15.0" right="15.0" bottom="15.0" left="15.0"/>
+               <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
             </StackPane.margin>
 
-            <Label
-                    text="PAÍS EM FOCO"
-                    styleClass="panel-title"/>
+            <Label styleClass="panel-title" text="PAÍS EM FOCO" />
 
-            <Region styleClass="panel-divider"/>
+            <Region styleClass="panel-divider" />
 
             <HBox styleClass="country-heading">
-               <Label text="🇧🇷" styleClass="country-flag"/>
+               <ImageView fx:id="countryFlag" fitHeight="28.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" styleClass="country-flag">
+                  <image>
+                     <Image url="@../../assets/images/main/default-country.png" />
+                  </image>
+               </ImageView>
                <VBox>
-                  <Label text="BRASIL" styleClass="country-name"/>
-                  <Label text="INFECTADO" styleClass="country-status"/>
+                  <Label fx:id="countryName" styleClass="country-name" text="PAÍS" wrapText="true" />
+                  <Label fx:id="countryStatus" styleClass="country-status" text="STATUS" />
                </VBox>
             </HBox>
 
-            <Label
-                    text="País da América do Sul."
-                    styleClass="country-description"/>
+            <Label fx:id="countryDescription" styleClass="country-description" text="Descrição do País" wrapText="true" />
 
-            <Region styleClass="panel-divider"/>
+            <Region styleClass="panel-divider" />
 
             <HBox styleClass="country-data-row">
-               <Label text="POPULAÇÃO"/>
-               <Label text="216.422.446" styleClass="data-value"/>
+               <Label text="POPULAÇÃO" />
+               <Label fx:id="countryPopulation" maxWidth="Infinity" styleClass="data-value" text="—" HBox.hgrow="ALWAYS" />
             </HBox>
 
-            <Region styleClass="panel-divider"/>
+            <Region styleClass="panel-divider" />
 
-            <Label
-                    text="ATRIBUTOS FIXOS"
-                    styleClass="section-label"/>
+            <Label styleClass="section-label" text="ATRIBUTOS FIXOS" />
 
             <HBox styleClass="country-data-row">
-               <Label text="Acessibilidade"/>
-               <Label text="—" styleClass="data-value"/>
+               <Label text="Acessibilidade" />
+               <Label fx:id="attrAcessibilidade" maxWidth="Infinity" styleClass="data-value" text="—" HBox.hgrow="ALWAYS" />
             </HBox>
 
             <HBox styleClass="country-data-row">
-               <Label text="Receptividade"/>
-               <Label text="—" styleClass="data-value"/>
+               <Label text="Receptividade" />
+               <Label fx:id="attrReceptividade" maxWidth="Infinity" styleClass="data-value" text="—" HBox.hgrow="ALWAYS" />
             </HBox>
 
             <HBox styleClass="country-data-row">
-               <Label text="Vulnerabilidade"/>
-               <Label text="—" styleClass="data-value"/>
+               <Label text="Vulnerabilidade" />
+               <Label fx:id="attrVulnerabilidade" maxWidth="Infinity" styleClass="data-value" text="—" HBox.hgrow="ALWAYS" />
             </HBox>
 
             <HBox styleClass="country-data-row">
-               <Label text="Resistência"/>
-               <Label text="—" styleClass="data-value"/>
+               <Label text="Resistência" />
+               <Label fx:id="attrResistencia" maxWidth="Infinity" styleClass="data-value" text="—" HBox.hgrow="ALWAYS" />
             </HBox>
 
-            <Label
-                    text="ATRIBUTOS DINÂMICOS"
-                    styleClass="section-label"/>
+            <Label styleClass="section-label" text="ATRIBUTOS DINÂMICOS" />
 
             <HBox styleClass="country-data-row">
-               <Label text="Não Expostos"/>
-               <Label text="—" styleClass="data-value"/>
+               <Label text="Não Expostos" />
+               <Label fx:id="dynNaoExpostos" maxWidth="Infinity" styleClass="data-value" text="—" HBox.hgrow="ALWAYS" />
             </HBox>
 
             <HBox styleClass="country-data-row">
-               <Label text="Expostos"/>
-               <Label text="—" styleClass="data-value"/>
+               <Label text="Expostos" />
+               <Label fx:id="dynExpostos" maxWidth="Infinity" styleClass="data-value" text="—" HBox.hgrow="ALWAYS" />
             </HBox>
 
             <HBox styleClass="country-data-row">
-               <Label text="Jogadores"/>
-               <Label text="24.781.332" styleClass="data-value"/>
+               <Label text="Jogadores" />
+               <Label fx:id="dynJogadores" maxWidth="Infinity" styleClass="data-value" text="—" HBox.hgrow="ALWAYS" />
             </HBox>
 
             <HBox styleClass="country-data-row">
-               <Label text="Jogadores Recorrentes"/>
-               <Label text="—" styleClass="data-value"/>
+               <Label text="Jogadores Recorrentes" />
+               <Label fx:id="dynRecorrentes" maxWidth="Infinity" styleClass="data-value" text="—" HBox.hgrow="ALWAYS" />
             </HBox>
 
             <HBox styleClass="country-data-row">
-               <Label text="Jogadores em Risco"/>
-               <Label text="—" styleClass="data-value"/>
+               <Label text="Jogadores em Risco" />
+               <Label fx:id="dynEmRisco" maxWidth="Infinity" styleClass="data-value" text="—" HBox.hgrow="ALWAYS" />
             </HBox>
 
             <HBox styleClass="country-data-row">
-               <Label text="Recuperados"/>
-               <Label text="—" styleClass="data-value"/>
+               <Label text="Recuperados" />
+               <Label fx:id="dynRecuperados" maxWidth="Infinity" styleClass="data-value" text="—" HBox.hgrow="ALWAYS" />
             </HBox>
 
             <HBox styleClass="country-data-row">
-               <Label text="Em Falência"/>
-               <Label text="—" styleClass="data-value"/>
+               <Label text="Em Falência" />
+               <Label fx:id="dynFalencia" maxWidth="Infinity" styleClass="data-value" text="—" HBox.hgrow="ALWAYS" />
             </HBox>
 
-            <HBox styleClass="details-button">
-               <Label text="VER DETALHES"/>
-               <Label text="›"/>
+            <HBox fx:id="initialCountryOption" onMouseClicked="#onEscolherPaisInicialButtonClicked" styleClass="details-button">
+               <Label text="ESCOLHER PAÍS" />
+               <Label text="›" />
             </HBox>
 
          </VBox>
 
          <!-- Painel de notícias -->
-         <VBox
-                 fx:id="newsPanel"
-                 styleClass="news-panel"
-                 StackPane.alignment="BOTTOM_RIGHT">
+         <VBox fx:id="newsPanel" alignment="CENTER_LEFT" styleClass="news-panel" StackPane.alignment="BOTTOM_RIGHT">
 
             <StackPane.margin>
-               <Insets top="15.0" right="15.0" bottom="15.0" left="15.0"/>
+               <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
             </StackPane.margin>
 
             <HBox styleClass="news-heading">
-               <Region styleClass="news-accent"/>
-               <Label
-                       text="ÚLTIMAS ATUALIZAÇÕES"
-                       styleClass="news-title"/>
+               <Region styleClass="news-accent" />
+               <Label styleClass="news-title" text="ÚLTIMAS ATUALIZAÇÕES" />
             </HBox>
 
             <HBox styleClass="news-item">
-               <Label text="•" styleClass="news-bullet"/>
-               <Label
-                       text="Brasil teve aumento de 11,4% nos apostadores."
-                       styleClass="news-text"
-                       HBox.hgrow="ALWAYS"/>
-               <Label text="14:20" styleClass="news-time"/>
+               <Label styleClass="news-bullet" text="•" />
+               <Label styleClass="news-text" text="Brasil teve aumento de 11,4% nos apostadores." HBox.hgrow="ALWAYS" />
+               <Label styleClass="news-time" text="14:20" />
             </HBox>
 
             <HBox styleClass="news-item">
-               <Label text="•" styleClass="news-bullet"/>
-               <Label
-                       text="Nova casa de aposta ativada: Betano."
-                       styleClass="news-text"
-                       HBox.hgrow="ALWAYS"/>
-               <Label text="13:47" styleClass="news-time"/>
+               <Label styleClass="news-bullet" text="•" />
+               <Label styleClass="news-text" text="Nova casa de aposta ativada: Betano." HBox.hgrow="ALWAYS" />
+               <Label styleClass="news-time" text="13:47" />
             </HBox>
 
             <HBox styleClass="news-item">
-               <Label text="•" styleClass="news-bullet"/>
-               <Label
-                       text="Alemanha registrou queda na taxa de infecção."
-                       styleClass="news-text"
-                       HBox.hgrow="ALWAYS"/>
-               <Label text="12:33" styleClass="news-time"/>
-            </HBox>
-
-            <HBox styleClass="news-item">
-               <Label text="•" styleClass="news-bullet"/>
-               <Label
-                       text="EUA teve aumento de 8% nos apostadores."
-                       styleClass="news-text"
-                       HBox.hgrow="ALWAYS"/>
-               <Label text="11:12" styleClass="news-time"/>
+               <Label styleClass="news-bullet" text="•" />
+               <Label styleClass="news-text" text="Alemanha registrou queda na taxa de infecção." HBox.hgrow="ALWAYS" />
+               <Label styleClass="news-time" text="12:33" />
             </HBox>
 
          </VBox>
